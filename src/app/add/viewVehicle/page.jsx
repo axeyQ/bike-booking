@@ -1,6 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
 
 export default function ViewVehicles() {
   const [vehicles, setVehicles] = useState([]);
@@ -76,7 +78,12 @@ export default function ViewVehicles() {
 
   return (
     <main className="p-4 overflow">
-      <h1 className="text-2xl font-bold mb-4">All Vehicles</h1>
+          <div className=" flex items-center justify-start gap-4 mb-4">
+      <Link href="/">
+      <FaArrowLeft/>
+      </Link>
+      <h1 className="text-xl font-bold ">All Vehicles</h1>
+      </div>
       <table className="w-full border-collapse border border-gray-300 min-w-fit overflow-x-auto">
         <thead>
           <tr>

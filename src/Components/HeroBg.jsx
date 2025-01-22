@@ -9,8 +9,8 @@ export function HeroBG() {
         MR Travels & Rental Services
       </p>
       <div className=" flex justify-center items-center gap-2">
-      <MovingButton Link={"/add/addVehicle"} LinkName={"Add Vehicle"}/>
-      <MovingButton Link={"/add/viewVehicle"} LinkName={"View Vehicle"}/>
+      <MovingButton Links={`/add/addVehicle`} LinkName={"Add Vehicle"}/>
+      <MovingButton Links={`/add/viewVehicle`} LinkName={"View Vehicle"}/>
       </div>
 
     </div>

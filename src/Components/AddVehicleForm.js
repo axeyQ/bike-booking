@@ -8,6 +8,8 @@ import {
 } from "@tabler/icons-react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
+import { FaArrowLeft, FaFontAwesome } from "react-icons/fa";
+import Link from "next/link";
 
 export default function AddVehicleForm() {
 
@@ -24,9 +26,14 @@ export default function AddVehicleForm() {
   return (
     (<div
       className="max-w-md w-full mx-auto rounded-lg md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+      <div className=" flex items-center justify-start gap-4">
+      <Link href="/">
+      <FaArrowLeft/>
+      </Link>
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Add Vehicles
       </h2>
+      </div>
 
       <form className="my-8" onSubmit={handleSubmit}>
         <LabelInputContainer className="mb-4">
