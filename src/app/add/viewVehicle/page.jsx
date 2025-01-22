@@ -69,35 +69,23 @@ export default function ViewVehicles() {
   }
 
   return (
-    <main className="p-4">
+    <main className="p-4 overflow">
       <h1 className="text-2xl font-bold mb-4">All Vehicles</h1>
-      <table className="w-full border-collapse border border-gray-300">
+      <table className="w-full border-collapse border border-gray-300 min-w-fit overflow-x-auto">
         <thead>
           <tr>
+            <th className="border border-gray-300 px-4 py-2">Status</th>
             <th className="border border-gray-300 px-4 py-2">Name</th>
             <th className="border border-gray-300 px-4 py-2">Registration Number</th>
-            <th className="border border-gray-300 px-4 py-2">Hourly Rate</th>
-            <th className="border border-gray-300 px-4 py-2">Status</th>
             <th className="border border-gray-300 px-4 py-2">Last Booked At</th>
           </tr>
         </thead>
         <tbody>
           {vehicles.map((vehicle) => (
             <tr key={vehicle._id}>
-              <td className="border border-gray-300 px-4 py-2">{vehicle.name}</td>
-              <td className="border border-gray-300 px-4 py-2">{vehicle.registrationNumber}</td>
-              <td className="border border-gray-300 px-4 py-2">{vehicle.hourlyRate}</td>
-              <td className="border border-gray-300 px-4 py-2">
-                {vehicle.available ? 'Available' : 'Booked'}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {vehicle.lastToggled
-                  ? new Date(vehicle.lastToggled).toLocaleString()
-                  : 'Never'}
-              </td>
-              <td className="border border-gray-300 px-4 py-2">
+            <td className="border border-gray-300 px-4 py-2">
                 <button
-                  className={`px-4 py-2 rounded-md ${
+                  className={`px-4 text-sm py-2 rounded-md ${
                     vehicle.available
                       ? 'bg-blue-500 text-white hover:bg-blue-600'
                       : 'bg-red-500 text-white hover:bg-red-600'
@@ -107,6 +95,15 @@ export default function ViewVehicles() {
                   {vehicle.available ? 'Book Now' : 'Mark Available'}
                 </button>
               </td>
+              <td className="border border-gray-300 px-4 py-2">{vehicle.name}</td>
+              <td className="border border-gray-300 px-4 py-2">{vehicle.registrationNumber}</td>
+            
+              <td className="border border-gray-300 px-4 py-2">
+                {vehicle.lastToggled
+                  ? new Date(vehicle.lastToggled).toLocaleString()
+                  : 'Never'}
+              </td>
+
             </tr>
           ))}
         </tbody>
