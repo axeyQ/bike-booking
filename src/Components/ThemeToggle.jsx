@@ -8,9 +8,9 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 bg-gray-200 dark:bg-gray-800 rounded text-sm absolute top-3 right-3"
+      className="p-2 bg-gray-200 dark:bg-gray-800 rounded text-sm absolute top-3 right-3 z-50"
     >
-      {theme === 'light' ? <FaMoon /> : <FaSun/>}
+      {theme === 'dark' ? <FaMoon /> : <FaSun/>}
     </button>
   );
 }
