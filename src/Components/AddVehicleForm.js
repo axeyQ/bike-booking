@@ -16,7 +16,7 @@ export default function AddVehicleForm() {
     const [form, setForm]=useState({name:'',registrationNumber: '', hourlyRate: 0 })
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/vehicles',{
+    const res = await fetch('/api/addVehicle',{
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -44,10 +44,10 @@ export default function AddVehicleForm() {
           <Label htmlFor="regNum">Registration Number</Label>
           <Input id="regNum" placeholder="Ex: MP04XXXX" type="text" onChange={(e) => setForm({ ...form, registrationNumber: e.target.value })}  />
         </LabelInputContainer>
-        <LabelInputContainer className="mb-4">
+        {/* <LabelInputContainer className="mb-4">
           <Label htmlFor="hourly">Hourly Rate</Label>
           <Input id="hourly" placeholder="Ex: 80" type="number" onChange={(e) => setForm({ ...form, hourlyRate: +e.target.value })}  />
-        </LabelInputContainer>
+        </LabelInputContainer> */}
 
         <div
           className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
