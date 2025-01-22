@@ -26,6 +26,12 @@ export default function ViewVehicles() {
     };
 
     fetchVehicles();
+
+        // Set up polling (every 5 seconds)
+        const intervalId = setInterval(fetchVehicles, 5000);
+
+        // Cleanup interval on component unmount
+        return () => clearInterval(intervalId);
   }, []);
 
   // Toggle availability
