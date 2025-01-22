@@ -38,7 +38,7 @@ export default function AddVehicleForm() {
           <Input id="regNum" placeholder="Ex: MP04XXXX" type="text" onChange={(e) => setForm({ ...form, registrationNumber: e.target.value })}  />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="hourly">Registration Number</Label>
+          <Label htmlFor="hourly">Hourly Rate</Label>
           <Input id="hourly" placeholder="Ex: 80" type="number" onChange={(e) => setForm({ ...form, hourlyRate: +e.target.value })}  />
         </LabelInputContainer>
 
